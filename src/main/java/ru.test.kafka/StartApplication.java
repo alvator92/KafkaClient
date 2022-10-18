@@ -8,7 +8,7 @@ import org.springframework.context.ApplicationContext;
 public class StartApplication {
     public static void main(String[] args) {
         ApplicationContext ctx = SpringApplication.run(StartApplication.class, args);
-        System.out.println("Hello LoadGen!");
+        System.out.println("Hello KafkaReplicator!");
 
     }
 }
