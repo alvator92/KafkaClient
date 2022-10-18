@@ -31,5 +31,5 @@ kafka:
     path: classpath:key_store.jks
     password: qwe123_
   message:
-    topic_1: TOPIC_NAME_1
-    topic_2: TOPIC_NAME_2
+    topic_1: TOPIC_NAME_REQUEST
+    topic_2: TOPIC_NAME_RESPONSE

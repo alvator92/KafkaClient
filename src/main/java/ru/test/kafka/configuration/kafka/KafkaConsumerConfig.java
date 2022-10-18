@@ -64,7 +64,7 @@ public class KafkaConsumerConfig {
         @KafkaListener(
                 topics = "TOPIC_NAME_1",
                 groupId = "KafkaReplicator",
-                topicPartitions = {@TopicPartition(topic = "TOPIC_NAME_1", partitions = {"0", "1"})},
+                topicPartitions = {@TopicPartition(topic = "TOPIC_NAME_RESPONSE", partitions = {"0", "1"})},
                 containerFactory = "KafkaListenerContainerFactory")
         public void readMessageToTopic(String message) {
             log.info("Recieved message in group :" + message);
