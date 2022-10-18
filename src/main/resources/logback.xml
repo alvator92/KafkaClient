@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <appender class="ch.qos.logback.core.rolling.RollingFileAppender" name="File">
+        <file>./logs/loadGen.log</file>
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>%d{"yyyy-MM-dd HH:mm:ss.SSS"}  %-5level [%thread] [%logger{0}::%M:%L] [%mdc] %msg %n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>./logs/loadGen.log_%d{yyyy-MM-dd}_%i.zip</fileNamePattern>
+            <maxFileSize>10MB</maxFileSize>
+            <maxHistory>5</maxHistory>
+            <TotalSizeCap>50MB</TotalSizeCap>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{"yyyy-MM-dd HH:mm:ss.SSS"} %-5level [%thread] [%logger{0}::%M:%L] [%mdc] %msg %n</pattern>
+        </encoder>
+    </appender>
+<!--    <appender name="FILE" class="ch.qos.logback.core.ConsoleAppender">-->
+<!--        <encoder>-->
+<!--            <pattern>%d{"yyyy-MM-dd HH:mm:ss.SSS"} %-5level [%thread] [%logger{0}::%M:%L] [%mdc] %msg %n</pattern>-->
+<!--        </encoder>-->
+<!--    </appender>-->
+    <logger name="LoadGen" level="trace"/>
+    <root level="info">
+        <appender-ref ref="CONSOLE"/>
+<!--        <appender-ref ref="FILE"/>-->
+    </root>
+</configuration>
